@@ -22,7 +22,7 @@ function CoupleCard({
       <div className="short-name">{shortName}</div>
       <div className="fullname">{fullName}</div>
       <div>
-        Putra Pertama dari <span>{parents}</span>
+        {parents}
       </div>
       <div>{location}</div>
 

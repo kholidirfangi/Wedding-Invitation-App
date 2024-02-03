@@ -60,8 +60,8 @@ const RSVPForm = () => {
   };
 
   return (
-    <div className="rsvp">
-      <SectionTitle>Guest Book</SectionTitle>
+    <div className="rsvp section">
+      <SectionTitle id="message">Guest Book</SectionTitle>
       <form data-aos="fade-up" onSubmit={handleSubmit}>
         <table>
           <tbody>
@@ -112,7 +112,6 @@ const RSVPForm = () => {
                 <textarea
                   rows={6}
                   name="message"
-                  id="message"
                   value={message}
                   onChange={handleMessageChange}
                   required
@@ -126,7 +125,7 @@ const RSVPForm = () => {
         </button>
       </form>
 
-      <div className="list-attendance">
+      <div className="list-attendance" id="message">
         <ul>
           {newSubmittedData.map((data, index) => {
             if (index !== -1) {

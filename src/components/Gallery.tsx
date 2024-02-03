@@ -4,8 +4,8 @@ import { SectionTitle } from './index';
 function Gallery() {
   return (
     <div>
-      <SectionTitle>Our Gallery</SectionTitle>
-      <div className="gallery">
+      <SectionTitle id="gallery">Our Gallery</SectionTitle>
+      <div className="gallery section">
         <img
           data-aos="flip-left"
           className="gallery-img"

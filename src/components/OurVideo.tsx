@@ -4,7 +4,7 @@ import { SectionTitle } from './index';
 function OurVideo() {
   return (
     <div className="section">
-      <SectionTitle>Our Video</SectionTitle>
+      <SectionTitle id='ourVideo'>Our Video</SectionTitle>
       <div data-aos="zoom-in-up" className="video">
         <video controls>
           <source src="assets/videos/videos.mp4" />

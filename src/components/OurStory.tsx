@@ -1,5 +1,5 @@
 import React from 'react';
-import SectionTitle from './SectionTitle';
+import {SectionTitle} from './index';
 
 function StoryCard({ children, img, location, date, description, dataAos }) {
   return (
@@ -9,9 +9,8 @@ function StoryCard({ children, img, location, date, description, dataAos }) {
       </div>
       <div>
         <div className="story-title">{children}</div>
-        <div className="d-flex">
-          <div>{location}</div>
-          <div>{date}</div>
+        <div>
+          <span>{location}</span> <span>{date}</span>
         </div>
         <p>{description}</p>
       </div>
@@ -21,8 +20,8 @@ function StoryCard({ children, img, location, date, description, dataAos }) {
 
 function OurStory() {
   return (
-    <div className="our-story">
-      <SectionTitle>Our Story</SectionTitle>
+    <div className="our-story section">
+      <SectionTitle id="story">Our Story</SectionTitle>
       <StoryCard
         dataAos="fade-right"
         img="assets/img/couple.jpg"

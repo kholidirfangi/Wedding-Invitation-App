@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { SectionTitle } from './index';
 
-
 const Countdown = ({ targetDate }) => {
   const calculateTimeLeft = () => {
     const now = new Date().getTime();
@@ -33,8 +32,8 @@ const Countdown = ({ targetDate }) => {
 
   return (
     <div>
-      <SectionTitle>CountDown</SectionTitle>
-      <div data-aos="fade-up" className="countdown">
+      <SectionTitle id="countdown">CountDown</SectionTitle>
+      <div data-aos="fade-up" className="countdown section">
         <div>
           <div className="time-left">{timeLeft.days}</div>
           <div className="countdown-time-name">Hari</div>
@@ -57,4 +56,3 @@ const Countdown = ({ targetDate }) => {
 };
 
 export default Countdown;
-

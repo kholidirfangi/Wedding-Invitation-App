@@ -10,6 +10,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1 {
   font-size: 4rem;
 }
@@ -33,12 +37,8 @@ p {
   text-shadow: 1px 1px 2px rgba(250, 250, 250, 0.2);
 }
 
-.container {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+.section {
+  padding: 5rem 0;
 }
 
 .front {
@@ -53,13 +53,14 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: url('assets/img/concrete-wall-with-flowers-potrait.jpg');
+  background-image: url('../assets/img/concrete-wall-with-flowers-potrait.jpg');
   background-size: cover;
   font-size: 1.5rem;
   font-family: 'Great Vibes', cursive;
 }
 
 .hero {
+  position: relative;
   width: 100vw;
   height: 100vh;
   text-align: center;
@@ -67,7 +68,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('assets/img/concrete-wall-with-flowers-potrait.jpg');
+  background-image: url('../assets/img/concrete-wall-with-flowers-potrait.jpg');
   background-size: cover;
 }
 
@@ -156,6 +157,8 @@ div.section-title {
   font-size: 3rem;
   padding: 1rem 0;
   font-family: 'Fleur De Leah', cursive;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5),
+    -1px -1px 3px rgba(255, 255, 255, 0.5);
 }
 
 .profile-couple-section {
@@ -214,6 +217,7 @@ div.sosmed {
 }
 
 .event-wrap {
+  padding: 3rem 0;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -308,7 +312,7 @@ div.sosmed {
   border: none;
   border-radius: 8px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1), -1px -1px 2px rgba(0, 0, 0, 0.1);
-  background: #f9f9f9;
+  background: rgba(255, 255, 255, 0.8);
   padding: 2rem;
 }
 
@@ -325,6 +329,7 @@ div.sosmed {
 
 .our-quote {
   text-align: center;
+  padding: 0 2rem;
 }
 
 .story-img {
@@ -414,6 +419,10 @@ table {
   border-spacing: 0.5rem;
 }
 
+img {
+  cursor: pointer;
+}
+
 input,
 select,
 textarea {
@@ -431,7 +440,6 @@ video {
 li {
   list-style: none;
   display: flex;
-  align-items: center;
   gap: 1rem;
   padding: 1rem;
   border-bottom: 1px solid #c6a969;
@@ -442,6 +450,8 @@ li {
   max-height: 300px;
   overflow: auto;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1), -1px -1px 2px rgba(0, 0, 0, 0.1);
+  background: white;
+  border-radius: 12px;
 }
 
 .attendance {
@@ -459,15 +469,144 @@ li {
   border-radius: 50%;
 }
 
+.show-qr-code {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.qr-code-wrap {
+  position: relative;
+  width: 330px;
+  height: 375px;
+  z-index: 9999;
+}
+
+.qr-code-img {
+  width: 300px;
+  position: fixed;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.btn-close {
+  color: white;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+  border-radius: 50%;
+  background: #c6a969;
+  z-index: 9999;
+  font-weight: bold;
+  border: none;
+}
+
+.btn-close:hover {
+  background: #ff8080;
+}
+
+.container-countdown {
+  position: relative;
+}
+
+svg {
+  position: absolute;
+  bottom: -1px;
+}
+
+.navigation img {
+  display: block;
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  width: 50px;
+}
+
+@keyframes menu {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.menu {
+  padding: 1rem;
+  border-radius: 12px;
+  position: fixed;
+  bottom: 100px;
+  right: 15px;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1), -1px -1px 3px rgba(0, 0, 0, 0.1);
+  animation-name: menu;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+  transform-origin: left bottom;
+}
+
+.menu img {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.menu img:hover {
+  transform: scale(1.5);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.audio {
+  position: fixed;
+  left: 15px;
+  bottom: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.playing {
+  animation-name: rotate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
 .footer {
   text-align: center;
-  padding: 3rem;
+  padding: 2rem;
 }
 
 @media screen and (min-width: 885px) {
   .front,
   .hero {
-    background-image: url('assets/img/concrete-wall-with-flowers.jpg');
+    background-image: url('../assets/img/concrete-wall-with-flowers.jpg');
     background-size: cover;
   }
 
@@ -510,7 +649,7 @@ li {
 @media screen and (min-width: 492px) {
   .front,
   .hero {
-    background-image: url('assets/img/concrete-wall-with-flowers-tablet.jpg');
+    background-image: url('../assets/img/concrete-wall-with-flowers-tablet.jpg');
     background-size: cover;
   }
 
@@ -561,5 +700,17 @@ li {
 
   [type='submit'] {
     width: 130px;
+  }
+
+  .navigation img {
+    width: 60px;
+  }
+
+  .menu {
+    bottom: 110px;
+  }
+
+  .menu img {
+    width: 40px;
   }
 }

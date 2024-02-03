@@ -13,7 +13,9 @@ import CoupleCard from './CoupleCard';
 import Front from './Front';
 import OpenendCard from './OpenedCard';
 import SectionTitle from './SectionTitle';
-import EventCard from './EventCard'
+import EventCard from './EventCard';
+import Navigation from './Navigation';
+import Audio from './Audio';
 
 export {
   Hero,
@@ -31,5 +33,7 @@ export {
   Front,
   OpenendCard,
   SectionTitle,
-  EventCard
+  EventCard,
+  Navigation,
+  Audio,
 };

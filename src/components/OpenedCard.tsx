@@ -11,10 +11,16 @@ import {
   RSVPForm,
   Thanks,
   Footer,
+  Navigation,
+  Audio,
 } from './index';
+import { Parallax } from 'react-parallax';
+
+import getData from '../data';
 
 function OpenendCard() {
-  const targetDate = new Date('2024-01-30T08:00:00').getTime();
+  const data = getData();
+  const targetDate = new Date(data.countdown).getTime();
   return (
     <div className="opened-card">
       <Hero />
@@ -22,15 +28,20 @@ function OpenendCard() {
       <ProfileCoupleSection />
       <Gallery />
       <OurVideo />
-      <OurStory />
-      <OurQuote
-        quote='"Tidak ada solusi yang lebih baik bagi dua insan yang saling mencintai di
-        banding pernikahan."'
-        ownerQuote="HR. Ibnu Majah"
-      />
+      <Parallax
+        blur={10}
+        bgImage="../assets/img/wedding.jpg"
+        bgImageAlt=""
+        strength={200}
+      >
+        <OurStory />
+      </Parallax>
+      <OurQuote quote={`"${data.quote}"`} ownerQuote={data.pemilikQuote} />
       <Gift />
       <RSVPForm />
       <Thanks />
+      <Navigation />
+      <Audio />
       <Footer />
     </div>
   );

@@ -1,10 +1,12 @@
 import React from 'react';
 import { SectionTitle, CoupleCard, EventCard } from './index';
+import getData from '../data';
 
 function ProfileCoupleSection() {
+  const data = getData();
   return (
-    <div className="profile-couple">
-      <SectionTitle>Bride & Groom</SectionTitle>
+    <div className="profile-couple section">
+      <SectionTitle id="profile">Bride & Groom</SectionTitle>
       <div data-aos="fade-up" className="prolog">
         <p className="mb-1">Assalamu’alaikum Warahmatullahi Wabarakatuh </p>
         <p>
@@ -17,48 +19,46 @@ function ProfileCoupleSection() {
       <div className="couple-wrap">
         <CoupleCard
           dataAos="fade-right"
-          shortName="Romeo"
-          fullName="Romeo Montaque"
-          parents="Bambang & Mulyani"
-          location="Yogyakaarta"
+          shortName={data.pria}
+          fullName={data.namaLengkapPria}
+          parents={data.orangTuaPria}
+          location={data.alamatPria}
           avatar="/assets/img/avatar-man.jpg"
         />
         <CoupleCard
           dataAos="fade-left"
-          shortName="Juliet"
-          fullName="Juliet Capulet"
-          parents="Joko & Siti"
-          location="Surakarta"
+          shortName={data.wanita}
+          fullName={data.namaLengkapWanita}
+          parents={data.orangTuaWanita}
+          location={data.alamatWanita}
           avatar="/assets/img/avatar-women.jpg"
         />
       </div>
-      <div className="event-wrap">
+      <div className="event-wrap" id="event">
         <EventCard
           dataAos="fade-up"
           dataAosDuration="0"
           eventName="Akad Nikah"
-          date="Jum'at 19 Januari 2024"
-          hours="08:00 - 09:00"
-          location="Masjid Kampus UGM Jl. Prof. DR. Drs Notonagoro, Karang Malang,
-            Caturtunggal, Kec. Depok, Kabupaten Sleman, Yogyakarta"
+          date={data.akad}
+          hours={data.waktuAkad}
+          location={data.tempatAkad}
         />
         <EventCard
           dataAosDuration="500"
           dataAos="fade-up"
           eventName="Resepsi"
-          date="Sabtu 20 Januari 2024"
-          hours="09:00 - selesai"
-          location="Masjid Kampus UGM Jl. Prof. DR. Drs Notonagoro, Karang Malang,
-        Caturtunggal, Kec. Depok, Kabupaten Sleman, Yogyakarta"
+          date={data.resepsi}
+          hours={data.waktuResepsi}
+          location={data.tempatResepsi}
         />
 
         <EventCard
           dataAosDuration="1000"
           dataAos="fade-up"
           eventName="Unduh Mantu"
-          date="Jum'at 19 Januari 2024"
-          hours="09:00 - selesai"
-          location="Rumah Mempelai Wanita Jl. Surya, Jebres, Kota Surakarta"
+          date={data.unduhMantu}
+          hours={data.waktuUnduhMantu}
+          location={data.tempatUnduhMantu}
         />
       </div>
     </div>
