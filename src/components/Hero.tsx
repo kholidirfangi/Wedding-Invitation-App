@@ -3,7 +3,7 @@ import getData from '../data';
 import { useParams } from 'react-router-dom';
 
 function Hero() {
-  const { eventId } = useParams();
+  const { eventId = 'Nama Tamu' } = useParams();
   const data = getData();
   return (
     <div className="hero" id="home">
