@@ -30,7 +30,7 @@ function Gift() {
   return (
     <div>
       <SectionTitle id="gift">Gift</SectionTitle>
-      <div className="gift section">
+      <div className="gift">
         <Card
           dataAos="flip-right"
           title="BCA"

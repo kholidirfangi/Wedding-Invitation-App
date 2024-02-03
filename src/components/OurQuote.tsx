@@ -3,7 +3,7 @@ import { SectionTitle } from './index';
 
 function OurQuote({ quote, ownerQuote }) {
   return (
-    <div className="section our-quote">
+    <div className="our-quote">
       <SectionTitle id="ourQuote">Our Quote</SectionTitle>
       <div data-aos="fade-up">
         <p>{quote}</p>
