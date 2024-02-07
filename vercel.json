@@ -10,7 +10,7 @@
   "routes": [
     {
       "src": "/:parameter",
-      "dest": "https://https://wedding-invitation-app-black.vercel.app/:parameter"
+      "dest": "https://wedding-invitation-app-black.vercel.app/:parameter"
     }
   ]
 }
