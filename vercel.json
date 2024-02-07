@@ -1,0 +1,16 @@
+{
+  "name": "wedding-invitation-app",
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@now/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/:parameter",
+      "dest": "https://https://wedding-invitation-app-black.vercel.app/:parameter"
+    }
+  ]
+}
